@@ -29,3 +29,76 @@ Reg no:  233002410618,Dept:   Bsc in IT(DS)
 \item Name:BISWAJIT NASKAR,Roll no:  30001223014 , Reg no: 233001010488 ,Dept:  BCA
 \item GIT LINK-https://github.com/Biswajit213
 \end{itemize}
+\documentclass{article}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\lstset{
+    language=C,
+    basicstyle=\ttfamily\footnotesize,
+    keywordstyle=\color{blue}\bfseries,
+    commentstyle=\color{gray},
+    stringstyle=\color{red},
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    stepnumber=1,
+    frame=single,
+    breaklines=true
+}
+
+\begin{document}
+
+\title{1. C Program: Basic Calculator}
+\author{}
+\date{}
+\maketitle
+
+\begin{lstlisting}
+// Basic Calculator Program in C
+
+#include <stdio.h>
+
+int main() {
+    char operator;
+    double num1, num2, result;
+
+    // Input operator
+    printf("Enter an operator (+, -, *, /): ");
+    scanf("%c", &operator);
+
+    // Input two numbers
+    printf("Enter two numbers: ");
+    scanf("%lf %lf", &num1, &num2);
+
+    // Perform the appropriate calculation
+    switch (operator) {
+        case '+':
+            result = num1 + num2;
+            printf("%.2lf + %.2lf = %.2lf\n", num1, num2, result);
+            break;
+        case '-':
+            result = num1 - num2;
+            printf("%.2lf - %.2lf = %.2lf\n", num1, num2, result);
+            break;
+        case '*':
+            result = num1 * num2;
+            printf("%.2lf * %.2lf = %.2lf\n", num1, num2, result);
+            break;
+        case '/':
+            if (num2 != 0) {
+                result = num1 / num2;
+                printf("%.2lf / %.2lf = %.2lf\n", num1, num2, result);
+            } else {
+                printf("Error! Division by zero.\n");
+            }
+            break;
+        default:
+            printf("Invalid operator.\n");
+            break;
+    }
+
+    return 0;
+}
+\end{lstlisting}
+
+\end{document}
